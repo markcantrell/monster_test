@@ -27,6 +27,7 @@ onLogin(){
   this.http.post("https://freeapi.miniprojectideas.com/api/User/Login",formValue).subscribe({
     next:(response:any)=>{
       if (response.result){
+        alert("Login successful");
         localStorage.setItem("authUserToken", response.data.token)
         this.router.navigateByUrl("/form")
       } else {

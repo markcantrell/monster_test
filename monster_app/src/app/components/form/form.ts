@@ -27,18 +27,18 @@ export class Form implements OnInit{
     comments: new FormControl("")
   })
 
-  // const headers = new HttpHeaders({
-  //   'token' : 'WW91IG11c3QgYmUgdGhlIGN1cmlvdXMgdHlwZS4gIEJyaW5nIHRoaXMgdXAgYXQgdGhlIGludGVydmlldyBmb3IgYm9udXMgcG9pbnRzICEh',
-  //   'candidate' : 'mark cantrell' 
-  // });
-  // const options = {headers:headers};
+  headers = new HttpHeaders({
+    'token' : 'WW91IG11c3QgYmUgdGhlIGN1cmlvdXMgdHlwZS4gIEJyaW5nIHRoaXMgdXAgYXQgdGhlIGludGVydmlldyBmb3IgYm9udXMgcG9pbnRzICEh',
+    'candidate' : 'mark cantrell' 
+  });
+  options = { headers: this.headers};
 
   submitFlightInfo(){
   const formValue = this.flightForm.value;
-  this.http.post("https://monster-users.free.beeceptor.com", formValue).subscribe({
-    next: (response:any) => {
+  this.http.post("https://monster-users.free.beeceptor.com", formValue, this.options).subscribe({
+    next: (response) => {
       alert("Flight information sent successfully");
-      this.router.navigateByUrl('/outcome')
+      this.router.navigateByUrl('/outcome');
     },
     error: (error) => {
       alert(error.error)
