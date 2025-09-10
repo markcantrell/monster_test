@@ -1,24 +1,24 @@
 <br>
 Please provide your flight information below 
 <br><br>
-<form>
+<form [formGroup]="flightForm">
 <label for="airline">Airline:</label>
-<input type="text" [(ngModel)]="flightInfo.airline" id="airline" name="airline">
+<input type="text" formControlName="airline" id="airline" name="airline">
 <br>
 <label for="arrivalDate">Date of arrival:</label>
-<input type="text" [(ngModel)]="flightInfo.arrivalDate" id="arrivalDate" name="arrivalDate">
+<input type="text" formControlName="arrivalDate" id="arrivalDate" name="arrivalDate">
 <br>
 <label for="arrivalTime">Time of arrival:</label>
-<input type="text" [(ngModel)]="flightInfo.arrivalTime" id="arrivalTime" name="arrivalTime">
+<input type="text" formControlName="arrivalTime" id="arrivalTime" name="arrivalTime">
 <br>
 <label for="flightNumber">Flight number:</label>
-<input type="text" [(ngModel)]="flightInfo.flightNumber" id="flightNumber" name="flightNumber">
+<input type="text" formControlName="flightNumber" id="flightNumber" name="flightNumber">
 <br>
 <label for="numOfGuests">Number of guests:</label>
-<input type="text" [(ngModel)]="flightInfo.numOfGuests" id="numOfGuests" name="numOfGuests">
+<input type="text" formControlName="numOfGuests" id="numOfGuests" name="numOfGuests">
 <br>
 <label for="comments">Additional comments:</label>
-<input type="text" [(ngModel)]="flightInfo.comments" id="comments" name="comments" value="N/A">
+<input type="text" formControlName="comments" id="comments" name="comments" value="N/A">
 <br>
-<input type="submit" value="Submit">
+<input type="button" (click)="submitFlightInfo()" value="Submit">
 </form>
