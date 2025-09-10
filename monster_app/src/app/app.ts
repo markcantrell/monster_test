@@ -9,4 +9,14 @@ import { RouterOutlet } from '@angular/router';
 })
 export class App {
   protected readonly title = signal('monster_app');
+
+  loggedUser: string = '';
+
+  constructor(){
+    const loggedData = localStorage.getItem("authUser"); 
+
+    if(loggedData != null){
+      this.loggedUser = loggedData;
+    }
+  }
 }

@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { App } from "../../app";
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-container',
-  imports: [],
+  imports: [App,],
   templateUrl: './container.html',
   styleUrl: './container.css'
 })
