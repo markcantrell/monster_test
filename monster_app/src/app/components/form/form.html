@@ -1,31 +1,40 @@
 <br>
-Please provide your flight information below 
+Please provide your flight information below
 <br><br>
 <form [formGroup]="flightForm">
-<label for="airline">Airline:</label>
-<input type="text" formControlName="airline" id="airline" name="airline">
-@if(flightForm.controls['airline'].touched){@if(flightForm.controls['airline'].errors?.['required']){<p>This field is required</p>}}
-<br>
-<label for="arrivalDate">Date of arrival:</label>
-<input type="text" formControlName="arrivalDate" id="arrivalDate" name="arrivalDate">
-@if(flightForm.controls['arrivalDate'].touched){@if(flightForm.controls['arrivalDate'].errors?.['required']){<p>This field is required</p>}
-@if(flightForm.controls['arrivalDate'].errors?.['pattern']){<p>Please use DD/MM/YYYY format</p>}}
-<br>
-<label for="arrivalTime">Time of arrival:</label>
-<input type="text" formControlName="arrivalTime" id="arrivalTime" name="arrivalTime">
-@if(flightForm.controls['arrivalTime'].touched){@if(flightForm.controls['arrivalTime'].errors?.['required']){<p>This field is required</p>}}
-<br>
-<label for="flightNumber">Flight number:</label>
-<input type="text" formControlName="flightNumber" id="flightNumber" name="flightNumber">
-@if(flightForm.controls['flightNumber'].touched){@if(flightForm.controls['flightNumber'].errors?.['required']){<p>This field is required</p>}}
-<br>
-<label for="numOfGuests">Number of guests:</label>
-<input type="text" formControlName="numOfGuests" id="numOfGuests" name="numOfGuests">
-@if(flightForm.controls['numOfGuests'].touched){@if(flightForm.controls['numOfGuests'].errors?.['required']){<p>This field is required</p>}}
-<br>
-<label for="comments">Additional comments:</label>
-<input type="text" formControlName="comments" id="comments" name="comments" value="N/A">
+    <label for="airline">Airline:</label>
+    <input type="text" formControlName="airline" id="airline" name="airline">
+    @if(flightForm.controls['airline'].touched){
+        @if(flightForm.controls['airline'].errors?.['required']){
+            <p>This field is required</p>}}
+    <br>
+    <label for="arrivalDate">Date of arrival:</label>
+    <input type="date" formControlName="arrivalDate" id="arrivalDate" name="arrivalDate">
+    @if(flightForm.controls['arrivalDate'].touched){
+        @if(flightForm.controls['arrivalDate'].errors?.['required']){
+            <p>This field is required</p>}}
+    <br>
+    <label for="arrivalTime">Time of arrival:</label>
+    <input type="time" formControlName="arrivalTime" id="arrivalTime" name="arrivalTime">
+    @if(flightForm.controls['arrivalTime'].touched){
+        @if(flightForm.controls['arrivalTime'].errors?.['required']){
+            <p>This field is required</p>}}
+    <br>
+    <label for="flightNumber">Flight number:</label>
+    <input type="text" formControlName="flightNumber" id="flightNumber" name="flightNumber">
+    @if(flightForm.controls['flightNumber'].touched){
+        @if(flightForm.controls['flightNumber'].errors?.['required']){
+            <p>This field is required</p>}}
+    <br>
+    <label for="numOfGuests">Number of guests:</label>
+    <input type="number" formControlName="numOfGuests" id="numOfGuests" name="numOfGuests">
+    @if(flightForm.controls['numOfGuests'].touched){
+        @if(flightForm.controls['numOfGuests'].errors?.['required']){
+            <p>This field is required</p>}}
+    <br>
+    <label for="comments">Additional comments:</label>
+    <input type="text" formControlName="comments" id="comments" name="comments" value="N/A">
 
-<br>
-<input type="button" [disabled]="flightForm.invalid" (click)="submitFlightInfo()" value="Submit">
+    <br>
+    <input type="button" [disabled]="flightForm.invalid" (click)="submitFlightInfo()" value="Submit">
 </form>

@@ -1,12 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Header } from "../header/header";
 import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, Header, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css'
 })
