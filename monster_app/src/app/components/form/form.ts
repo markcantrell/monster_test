@@ -43,7 +43,7 @@ export class Form {
 
   submitFlightInfo() {
     const formValue = this.flightForm.value;
-    this.http.post("https://monster-users.free.beeceptor.com", formValue, this.options).subscribe({
+    this.http.post("https://us-central1-crm-sdk.cloudfunctions.net/flightInfoChallenge", formValue, this.options).subscribe({
       next: (response) => {
         alert("Flight information sent successfully");
         this.router.navigateByUrl('/outcome');
