@@ -23,7 +23,7 @@ loginForm: FormGroup = new FormGroup({
 
 onLogin(){
   const formValue = this.loginForm.value;
-  this.http.post("https://freeapi.miniprojectideas.com/api/User/Login",formValue).subscribe({
+  this.http.post("https://monster-users.free.beeceptor.com",formValue).subscribe({
     next:(response:any)=>{
       if (response.result){
         alert("Login successful");
